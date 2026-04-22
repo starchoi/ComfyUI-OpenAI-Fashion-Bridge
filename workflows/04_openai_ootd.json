@@ -1,0 +1,57 @@
+{
+  "1": {
+    "inputs": {
+      "image": "person_input.png"
+    },
+    "class_type": "LoadImage",
+    "_meta": {
+      "title": "Load Person Image"
+    }
+  },
+  "2": {
+    "inputs": {
+      "image": "fashion_items_input.png"
+    },
+    "class_type": "LoadImage",
+    "_meta": {
+      "title": "Load Fashion Items Image"
+    }
+  },
+  "3": {
+    "inputs": {
+      "task": "ootd",
+      "prompt": "Perform an OOTD styling transformation on the person in image1 using all garments and fashion items shown in image2. Keep the person's face, body proportion, pose, hair, and background as consistent as possible. Recreate the outfit from image2 on the person in image1 in a realistic and fashionable way.",
+      "model": "gpt-image-2",
+      "size": "1024x1536",
+      "quality": "high",
+      "output_format": "png",
+      "api_key": "",
+      "timeout_seconds": 180,
+      "image1": [
+        "1",
+        0
+      ],
+      "image2": [
+        "2",
+        0
+      ]
+    },
+    "class_type": "OpenAIFashionBridge",
+    "_meta": {
+      "title": "OpenAI Fashion Bridge"
+    }
+  },
+  "4": {
+    "inputs": {
+      "filename_prefix": "OpenAI_OOTD",
+      "images": [
+        "3",
+        0
+      ]
+    },
+    "class_type": "SaveImage",
+    "_meta": {
+      "title": "Save Image"
+    }
+  }
+}

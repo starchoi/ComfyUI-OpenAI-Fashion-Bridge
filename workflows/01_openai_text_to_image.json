@@ -1,0 +1,31 @@
+{
+  "1": {
+    "inputs": {
+      "task": "text_to_image",
+      "prompt": "A high-fashion editorial photoshoot of a model wearing an avant-garde couture outfit inspired by futuristic Japanese fashion, full body, clean luxury studio background, cinematic lighting, highly detailed textile texture, premium fashion campaign quality.",
+      "model": "gpt-image-2",
+      "size": "1024x1536",
+      "quality": "high",
+      "output_format": "png",
+      "api_key": "",
+      "timeout_seconds": 180
+    },
+    "class_type": "OpenAIFashionBridge",
+    "_meta": {
+      "title": "OpenAI Fashion Bridge"
+    }
+  },
+  "2": {
+    "inputs": {
+      "filename_prefix": "OpenAI_T2I",
+      "images": [
+        "1",
+        0
+      ]
+    },
+    "class_type": "SaveImage",
+    "_meta": {
+      "title": "Save Image"
+    }
+  }
+}

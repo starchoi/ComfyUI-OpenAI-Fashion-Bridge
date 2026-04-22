@@ -1,0 +1,44 @@
+{
+  "1": {
+    "inputs": {
+      "image": "fabric_input.png"
+    },
+    "class_type": "LoadImage",
+    "_meta": {
+      "title": "Load Fabric Image"
+    }
+  },
+  "2": {
+    "inputs": {
+      "task": "fabric_to_garment",
+      "prompt": "Analyze the uploaded fabric image only as raw material information. Generate a high-fashion editorial photograph of a person wearing a bespoke garment made from that same fabric. Preserve the fabric pattern, texture, weave, and main color palette. Ignore the original cutting and background of the source image. The final look should be realistic, elegant, premium, full body, luxury studio, vogue editorial style.",
+      "model": "gpt-image-2",
+      "size": "1024x1536",
+      "quality": "high",
+      "output_format": "png",
+      "api_key": "",
+      "timeout_seconds": 180,
+      "image1": [
+        "1",
+        0
+      ]
+    },
+    "class_type": "OpenAIFashionBridge",
+    "_meta": {
+      "title": "OpenAI Fashion Bridge"
+    }
+  },
+  "3": {
+    "inputs": {
+      "filename_prefix": "OpenAI_Fabric2Garment",
+      "images": [
+        "2",
+        0
+      ]
+    },
+    "class_type": "SaveImage",
+    "_meta": {
+      "title": "Save Image"
+    }
+  }
+}

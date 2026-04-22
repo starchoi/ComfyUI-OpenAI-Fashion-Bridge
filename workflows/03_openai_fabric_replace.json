@@ -1,0 +1,57 @@
+{
+  "1": {
+    "inputs": {
+      "image": "garment_input.png"
+    },
+    "class_type": "LoadImage",
+    "_meta": {
+      "title": "Load Garment Image"
+    }
+  },
+  "2": {
+    "inputs": {
+      "image": "fabric_input.png"
+    },
+    "class_type": "LoadImage",
+    "_meta": {
+      "title": "Load Fabric Image"
+    }
+  },
+  "3": {
+    "inputs": {
+      "task": "fabric_replace",
+      "prompt": "Use the fabric shown in image2 to replace the original fabric of the garment in image1. Keep the garment's shape, silhouette, cutting, sewing structure, accessories, printing placement, model pose, face, hair, lighting, and background unchanged as much as possible. Only change the garment material to match image2 realistically.",
+      "model": "gpt-image-2",
+      "size": "1024x1536",
+      "quality": "high",
+      "output_format": "png",
+      "api_key": "",
+      "timeout_seconds": 180,
+      "image1": [
+        "1",
+        0
+      ],
+      "image2": [
+        "2",
+        0
+      ]
+    },
+    "class_type": "OpenAIFashionBridge",
+    "_meta": {
+      "title": "OpenAI Fashion Bridge"
+    }
+  },
+  "4": {
+    "inputs": {
+      "filename_prefix": "OpenAI_FabricReplace",
+      "images": [
+        "3",
+        0
+      ]
+    },
+    "class_type": "SaveImage",
+    "_meta": {
+      "title": "Save Image"
+    }
+  }
+}

@@ -1,0 +1,44 @@
+{
+  "1": {
+    "inputs": {
+      "image": "front_view_input.png"
+    },
+    "class_type": "LoadImage",
+    "_meta": {
+      "title": "Load Front View Image"
+    }
+  },
+  "2": {
+    "inputs": {
+      "task": "front_to_back",
+      "prompt": "Generate a realistic back view of the garment from the provided front view in image1. Preserve fabric type, drape, seams, closures, silhouette, fit, and overall styling. If a model is present, keep the body shape and pose logic consistent with a natural back-facing view in a similar studio setting.",
+      "model": "gpt-image-2",
+      "size": "1024x1536",
+      "quality": "high",
+      "output_format": "png",
+      "api_key": "",
+      "timeout_seconds": 180,
+      "image1": [
+        "1",
+        0
+      ]
+    },
+    "class_type": "OpenAIFashionBridge",
+    "_meta": {
+      "title": "OpenAI Fashion Bridge"
+    }
+  },
+  "3": {
+    "inputs": {
+      "filename_prefix": "OpenAI_FrontToBack",
+      "images": [
+        "2",
+        0
+      ]
+    },
+    "class_type": "SaveImage",
+    "_meta": {
+      "title": "Save Image"
+    }
+  }
+}

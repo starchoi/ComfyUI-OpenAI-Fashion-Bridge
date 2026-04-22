@@ -1,0 +1,44 @@
+{
+  "1": {
+    "inputs": {
+      "image": "edit_input.png"
+    },
+    "class_type": "LoadImage",
+    "_meta": {
+      "title": "Load Image"
+    }
+  },
+  "2": {
+    "inputs": {
+      "task": "image_edit",
+      "prompt": "Edit image1 as instructed: change only the requested design element while preserving the rest of the image. Keep the model identity, pose, garment structure, lighting, and background unchanged. Example edit: replace the jacket buttons with pearl buttons while preserving the original jacket fabric and shape.",
+      "model": "gpt-image-2",
+      "size": "1024x1536",
+      "quality": "high",
+      "output_format": "png",
+      "api_key": "",
+      "timeout_seconds": 180,
+      "image1": [
+        "1",
+        0
+      ]
+    },
+    "class_type": "OpenAIFashionBridge",
+    "_meta": {
+      "title": "OpenAI Fashion Bridge"
+    }
+  },
+  "3": {
+    "inputs": {
+      "filename_prefix": "OpenAI_ImageEdit",
+      "images": [
+        "2",
+        0
+      ]
+    },
+    "class_type": "SaveImage",
+    "_meta": {
+      "title": "Save Image"
+    }
+  }
+}
